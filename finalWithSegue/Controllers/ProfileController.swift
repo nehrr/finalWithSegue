@@ -12,6 +12,9 @@ class ProfileController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+//        how to use singleton beneath
+//        StaticUser.instance.user?.name
 
         // Do any additional setup after loading the view.
     }

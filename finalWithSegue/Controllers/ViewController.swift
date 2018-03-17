@@ -13,8 +13,6 @@ class ViewController: UIViewController {
     @IBOutlet weak var emailFld: UITextField!
     @IBOutlet weak var pwFld: UITextField!
     @IBOutlet weak var errMsg: UILabel!
-    
-    var aUser: StaticUser?
 
     override func viewDidLoad() {
         super.viewDidLoad()

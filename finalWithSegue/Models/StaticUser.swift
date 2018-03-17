@@ -9,7 +9,7 @@
 import UIKit
 
 class StaticUser: NSObject {
-    static let instance: StaticUser? = StaticUser()
+    static let instance: StaticUser = StaticUser()
     
     var user: User?
 }
