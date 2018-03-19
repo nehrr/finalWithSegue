@@ -13,7 +13,6 @@
 		426813AE205C39BA0089634E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 426813AD205C39BA0089634E /* Assets.xcassets */; };
 		426813B1205C39BA0089634E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 426813AF205C39BA0089634E /* LaunchScreen.storyboard */; };
 		426813BB205C3A240089634E /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 426813BA205C3A240089634E /* User.swift */; };
-		4275D19220602699006009D3 /* LoginDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4275D19120602698006009D3 /* LoginDelegate.swift */; };
 		4275D194206026A5006009D3 /* RegisterDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4275D193206026A5006009D3 /* RegisterDelegate.swift */; };
 		4275D196206026AE006009D3 /* ProfileDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4275D195206026AE006009D3 /* ProfileDelegate.swift */; };
 		4286DA4A205C3C70004F87A1 /* StaticUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4286DA49205C3C70004F87A1 /* StaticUser.swift */; };
@@ -30,7 +29,6 @@
 		426813B0205C39BA0089634E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		426813B2205C39BA0089634E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		426813BA205C3A240089634E /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
-		4275D19120602698006009D3 /* LoginDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginDelegate.swift; sourceTree = "<group>"; };
 		4275D193206026A5006009D3 /* RegisterDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterDelegate.swift; sourceTree = "<group>"; };
 		4275D195206026AE006009D3 /* ProfileDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileDelegate.swift; sourceTree = "<group>"; };
 		4286DA49205C3C70004F87A1 /* StaticUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StaticUser.swift; sourceTree = "<group>"; };
@@ -110,7 +108,6 @@
 		4275D19020602653006009D3 /* Delegates */ = {
 			isa = PBXGroup;
 			children = (
-				4275D19120602698006009D3 /* LoginDelegate.swift */,
 				4275D193206026A5006009D3 /* RegisterDelegate.swift */,
 				4275D195206026AE006009D3 /* ProfileDelegate.swift */,
 			);
@@ -196,7 +193,6 @@
 				4286DA4E205C3D5C004F87A1 /* RegisterController.swift in Sources */,
 				426813A7205C39BA0089634E /* AppDelegate.swift in Sources */,
 				4286DA4A205C3C70004F87A1 /* StaticUser.swift in Sources */,
-				4275D19220602699006009D3 /* LoginDelegate.swift in Sources */,
 				426813BB205C3A240089634E /* User.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
