@@ -10,6 +10,25 @@ import UIKit
 
 class RegisterController: UIViewController {
     
+    @IBOutlet weak var emailFld: UITextField!
+    @IBOutlet weak var pwFld: UITextField!
+    @IBOutlet weak var pwConfirmFld: UITextField!
+    
+    @IBAction func register(_ sender: Any) {
+        //perform register stuff
+        //if ok > segue "ToLogin"
+        if (emailFld.text == "a" && pwFld.text == pwConfirmFld.text) {
+            print("good tokens")
+            StaticUser.instance.user?.email = emailFld!.text!
+            StaticUser.instance.user?.password = pwFld!.text!
+            print("\(StaticUser.instance.user?.email) & \(StaticUser.instance.user?.password)")
+            self.performSegue(withIdentifier: "ToLogin", sender: self)
+        } else {
+//            errMsg.text = "wrong tokens"
+//            errMsg.textColor = UIColor.red
+        }
+    }
+    
     var delegate: RegisterDelegate?
 
     override func viewDidLoad() {

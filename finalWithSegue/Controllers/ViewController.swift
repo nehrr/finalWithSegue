@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ViewController: UIViewController, LoginDelegate, RegisterDelegate, ProfileDelegate {
+class ViewController: UIViewController, RegisterDelegate, ProfileDelegate {
     
     @IBOutlet weak var emailFld: UITextField!
     @IBOutlet weak var pwFld: UITextField!
