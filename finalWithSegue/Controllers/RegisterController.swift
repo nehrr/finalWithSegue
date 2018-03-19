@@ -9,6 +9,8 @@
 import UIKit
 
 class RegisterController: UIViewController {
+    
+    var delegate: RegisterDelegate?
 
     override func viewDidLoad() {
         super.viewDidLoad()

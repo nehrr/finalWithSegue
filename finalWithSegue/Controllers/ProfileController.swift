@@ -9,6 +9,8 @@
 import UIKit
 
 class ProfileController: UIViewController {
+    
+    var delegate: ProfileDelegate?
 
     override func viewDidLoad() {
         super.viewDidLoad()

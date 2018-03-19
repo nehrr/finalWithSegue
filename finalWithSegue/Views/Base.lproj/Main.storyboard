@@ -52,8 +52,8 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BZb-7s-afM">
-                                <rect key="frame" x="16" y="262" width="343" height="0.0"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="dqsdqd" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BZb-7s-afM">
+                                <rect key="frame" x="16" y="262" width="343" height="20.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -83,7 +83,7 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <connections>
-                                    <segue destination="BpQ-kj-2gB" kind="show" identifier="ToProfile" id="tbQ-hN-uhS"/>
+                                    <action selector="login:" destination="kss-FG-sUW" eventType="touchUpInside" id="Ceo-ht-9Mj"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TIF-Lu-Skh">
@@ -132,7 +132,9 @@
                     <navigationItem key="navigationItem" id="gep-6y-tqb"/>
                     <connections>
                         <outlet property="emailFld" destination="BGu-G7-pZf" id="rlK-Yi-xbx"/>
+                        <outlet property="errMsg" destination="BZb-7s-afM" id="5Dn-2V-ug0"/>
                         <outlet property="pwFld" destination="Jyj-pv-tLR" id="Jdw-BF-2QU"/>
+                        <segue destination="BpQ-kj-2gB" kind="show" identifier="ToProfile" id="0Pn-Qi-Nc6"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5uY-Wc-T4N" userLabel="First Responder" sceneMemberID="firstResponder"/>
