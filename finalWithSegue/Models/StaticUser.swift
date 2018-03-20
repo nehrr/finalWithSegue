@@ -8,8 +8,11 @@
 
 import UIKit
 
-class StaticUser: NSObject {
+class StaticUser {
     static let instance: StaticUser = StaticUser()
     
-    var user: User?
+    var name: String = ""
+    var lastname: String = ""
+    var email: String = ""
+    var password: String = ""
 }

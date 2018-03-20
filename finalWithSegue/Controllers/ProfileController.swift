@@ -10,6 +10,11 @@ import UIKit
 
 class ProfileController: UIViewController {
     
+    @IBOutlet weak var changePwFld: UITextField!
+    @IBOutlet weak var changePwConfirmFld: UITextField!
+    @IBOutlet weak var changeEmailFld: UITextField!
+    @IBOutlet weak var errMsg: UILabel!
+    
     var delegate: ProfileDelegate?
 
     override func viewDidLoad() {

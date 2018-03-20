@@ -15,14 +15,41 @@ class ViewController: UIViewController, RegisterDelegate, ProfileDelegate {
     @IBOutlet weak var errMsg: UILabel!
     
     @IBAction func login(_ sender: Any) {
-        
-        if (emailFld.text == "a" && pwFld.text == "a") {
-            print("good login")
-            self.performSegue(withIdentifier: "ToProfile", sender: self)
-        } else {
-            errMsg.text = "wrong tokens"
-            errMsg.textColor = UIColor.red
+        if emailFld.text == "" || pwFld.text == "" {
+            print("empty tokens")
+            errMsg.text = "empty tokens"
+            return
         }
+        
+        if StaticUser.instance.email.isEmpty || StaticUser.instance.password.isEmpty {
+            print("user nil")
+            errMsg.text = "no user"
+            return
+        }
+        
+//        if let userEmail = StaticUser.instance.email, let userPw = StaticUser.instance.password {
+            if StaticUser.instance.email != emailFld.text || emailFld.text!.isEmpty {
+                print("wrong email unwrapped")
+                errMsg.text = "wrong email"
+                return
+            }
+            
+            if StaticUser.instance.password != pwFld.text || pwFld.text!.isEmpty {
+                print("wrong password unwrapped")
+                errMsg.text = "Wrong password"
+                return
+            }
+            
+            if (StaticUser.instance.email == emailFld.text) && (StaticUser.instance.password == pwFld.text) {
+                print("email: \(StaticUser.instance.email) pw: \(StaticUser.instance.password)")
+//                print("\(userEmail == emailFld.text)")
+//                print("\(userPw == pwFld.text)")
+               
+                errMsg.text = "Logged in"
+                
+                self.performSegue(withIdentifier: "ToProfile", sender: self)
+            }
+//        }
         
     }
     
@@ -36,7 +63,14 @@ class ViewController: UIViewController, RegisterDelegate, ProfileDelegate {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+//        if segue.identifier == "ToProfile" {
+//            if let des = segue.destination as? ProfileController {
+//                des.errMsg.text = "Welcome back!"
+//            }
+//        }
+    }
 
 }
 
