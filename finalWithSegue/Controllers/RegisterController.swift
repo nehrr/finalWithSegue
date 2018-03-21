@@ -59,8 +59,6 @@ class RegisterController: UIViewController {
             print("fail")
         }
     }
-    
-    var delegate: RegisterDelegate?
 
     override func viewDidLoad() {
         super.viewDidLoad()

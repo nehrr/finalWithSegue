@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ViewController: UIViewController, RegisterDelegate, ProfileDelegate {
+class ViewController: UIViewController {
     
     @IBOutlet weak var emailFld: UITextField!
     @IBOutlet weak var pwFld: UITextField!
@@ -65,11 +65,11 @@ class ViewController: UIViewController, RegisterDelegate, ProfileDelegate {
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-//        if segue.identifier == "ToProfile" {
-//            if let des = segue.destination as? ProfileController {
-//                des.errMsg.text = "Welcome back!"
-//            }
-//        }
+        if segue.identifier == "ToProfile" {
+            if let des = segue.destination as? ProfileController {
+//                des.errMsg.text = "Test"
+            }
+        }
     }
 
 }

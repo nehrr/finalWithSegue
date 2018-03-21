@@ -9,5 +9,6 @@
 import UIKit
 
 protocol ProfileDelegate {
+    func fillProfile()
 
 }
