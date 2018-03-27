@@ -13,50 +13,53 @@ class RegisterController: UIViewController {
     @IBOutlet weak var emailFld: UITextField!
     @IBOutlet weak var pwFld: UITextField!
     @IBOutlet weak var pwConfirmFld: UITextField!
-    
-    func isValid(_ email: String) -> Bool {
-        //Wtf is this regex though
-        let emailRegEx = "(?:[a-z0-9!#$%\\&'*+/=?\\^_`{|}~-]+(?:\\.[a-z0-9!#$%\\&'*+/=?\\^_`{|}"+"~-]+)*|\"(?:[\\x01-\\x08\\x0b\\x0c\\x0e-\\x1f\\x21\\x23-\\x5b\\x5d-\\"+"x7f]|\\\\[\\x01-\\x09\\x0b\\x0c\\x0e-\\x7f])*\")@(?:(?:[a-z0-9](?:[a-"+"z0-9-]*[a-z0-9])?\\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?|\\[(?:(?:25[0-5"+"]|2[0-4][0-9]|[01]?[0-9][0-9]?)\\.){3}(?:25[0-5]|2[0-4][0-9]|[01]?[0-"+"9][0-9]?|[a-z0-9-]*[a-z0-9]:(?:[\\x01-\\x08\\x0b\\x0c\\x0e-\\x1f\\x21"+"-\\x5a\\x53-\\x7f]|\\\\[\\x01-\\x09\\x0b\\x0c\\x0e-\\x7f])+)\\])"
-        
-        let emailTest = NSPredicate(format:"SELF MATCHES[c] %@", emailRegEx)
-        return emailTest.evaluate(with: email)
-    }
+    @IBOutlet weak var errMsg: UILabel!
     
     @IBAction func register(_ sender: Any) {
         //perform register stuff
         //if ok > segue "ToLogin"
         
         //Check if fields are empty
-        if (pwFld.text != "") && (emailFld.text != "") {
+        if let newEmail = emailFld.text, let newPw = pwFld.text, let newPwConfirm = pwConfirmFld.text {
+
+            if newEmail.isEmpty {
+                errMsg.text = "no email"
+                errMsg.textColor = UIColor.ernoulRed
+                return
+            }
             
-//            //Check if email is valid
-//            if isValid(emailFld.text!) == true {
-//
-//                //Check if pw length is sufficient
-//                if (pwFld.text!.count > 5) || (pwConfirmFld.text!.count > 5) {
+            if !newEmail.isEmpty && !newEmail.isValidEmail() {
+                errMsg.text = "wrong email formatting"
+                errMsg.textColor = UIColor.ernoulRed
+                return
+            }
             
-                    //Check if pw match
-                    if pwFld.text == pwConfirmFld.text {
-                        if let newUserEmail = emailFld.text {
-                            StaticUser.instance.email = newUserEmail
-                            print(newUserEmail)
-                        }
-                        if let newUserPw = pwFld.text {
-                            StaticUser.instance.password = newUserPw
-                            print(newUserPw)
-                        }
-                        
-                        print("\(StaticUser.instance.email)")
-                        print("\(StaticUser.instance.password)")
-                        self.performSegue(withIdentifier: "ToLogin", sender: self)
-                    }
-//                }
-//            }
+            if newPw.isEmpty {
+                errMsg.text = "no pw"
+                errMsg.textColor = UIColor.ernoulRed
+                return
+            }
             
-        } else {
-//            errMsg.text = "wrong tokens"
-//            errMsg.textColor = UIColor.red
-            print("fail")
+            if (newPw.count < 4) || (newPwConfirm.count < 4) {
+                errMsg.text = "pw too short"
+                errMsg.textColor = UIColor.ernoulRed
+                return
+            }
+            
+            if newPwConfirm != newPw {
+                errMsg.text = "pw do not match"
+                errMsg.textColor = UIColor.ernoulRed
+                return
+            }
+            
+            if newPw == newPwConfirm {
+                StaticUser.instance.email = newEmail
+                StaticUser.instance.password = newPw
+                
+                print("\(StaticUser.instance.email)")
+                print("\(StaticUser.instance.password)")
+                self.performSegue(withIdentifier: "ToLogin", sender: self)
+            }
         }
     }
 
