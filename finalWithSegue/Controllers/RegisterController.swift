@@ -58,7 +58,7 @@ class RegisterController: UIViewController {
                 
                 print("\(StaticUser.instance.email)")
                 print("\(StaticUser.instance.password)")
-                self.performSegue(withIdentifier: "ToLogin", sender: self)
+                self.performSegue(withIdentifier: "ToRegisterUser", sender: self)
             }
         }
     }

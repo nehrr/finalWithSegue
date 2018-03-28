@@ -39,11 +39,16 @@ class ProfileController: UIViewController {
     
     @IBAction func changeEmail() {
         if let newEmail = changeEmailFld.text {
-            if !newEmail.isEmpty {
+            if !newEmail.isEmpty && newEmail.isValidEmail() {
                 StaticUser.instance.email = newEmail
                 errMsg.text = "email changed"
                     print("\(newEmail)")
                 }
+            
+            if !newEmail.isValidEmail() {
+                errMsg.text = "email formatting incorrect"
+                return
+            }
             
             if newEmail.isEmpty {
                 errMsg.text = "email cannot be empty"
